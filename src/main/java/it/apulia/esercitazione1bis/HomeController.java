@@ -102,6 +102,9 @@ public class HomeController {
 	public String fooresult(
 			@ModelAttribute("formutente") UtenteDTO formutente,
 			Model model) {
+
+		//test
+		model.addAttribute("myList",this.userService.getAllUsers());
 		
 		return "datiSalvatiForm";
 	}

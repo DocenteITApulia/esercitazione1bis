@@ -17,6 +17,15 @@
 	La registrazione dell'utente &egrave; avvenuta con successo.
 
 	<a href="/register">Registra un nuovo utente</a>
+
+	<span th:unless="${#lists.isEmpty(myList)}"><h1>Elenco degli utenti gi&agrave; registrati:</h1>
+		</span>
+	<ul th:each="user : ${myList}">
+		<li th:text="${user.email}"></li>
+	</ul>
+
+
+
     
 </body>
 </html>

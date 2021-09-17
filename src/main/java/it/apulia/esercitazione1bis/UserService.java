@@ -2,7 +2,9 @@ package it.apulia.esercitazione1bis;
 
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 @Service
 public class UserService {
@@ -41,5 +43,9 @@ public class UserService {
 
 	public boolean verificaPassword(String psw, String vpsw) {
 		return psw.equals(vpsw);
+	}
+
+	public List<UtenteDTO> getAllUsers(){
+		return new ArrayList(this.similDB.values());
 	}
 }
