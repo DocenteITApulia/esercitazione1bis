@@ -14,11 +14,13 @@
 	<p th:text= "'Single Checkbox Value: ' + ${formutente.privacy}" />
 	-->
 	<!--<p th:text="'La registrazione dell'utente ' + ${formutente.email} +' è avvenuta con successo'"/>-->
-	La registrazione dell'utente &egrave; avvenuta con successo.
+	<span th:if="${#lists.isEmpty(myList)}">Non ci sono ancora utenti registrati</span>
 
-	<a href="/register">Registra un nuovo utente</a>
 
 	<span th:unless="${#lists.isEmpty(myList)}"><h1>Elenco degli utenti gi&agrave; registrati:</h1>
+		La registrazione dell'utente &egrave; avvenuta con successo.
+
+	<a href="/register">Registra un nuovo utente</a>
 		</span>
 	<ul th:each="user : ${myList}">
 		<li th:text="${user.email}"></li>

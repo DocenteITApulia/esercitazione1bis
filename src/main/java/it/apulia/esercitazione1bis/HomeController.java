@@ -75,7 +75,7 @@ public class HomeController {
 			RedirectAttributes ra ) {
 		
 
-		if ( bindingResult.hasErrors() || this.userService.verifyEmail(formutente.getEmail())) {
+		if ( bindingResult.hasErrors() || this.userService.verifyEmail(formutente.getEmail()) || !this.userService.verificaPassword(formutente.getPassword(), formutente.getVpassword())) {
 			if(bindingResult.hasErrors()){
 			for(ObjectError temp :bindingResult.getAllErrors()){
 				System.out.println("Errore trovato: nome "+temp.getObjectName()+
